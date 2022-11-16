@@ -10,10 +10,7 @@ code = st.text_input('銘柄コードを入力してください')
 code = code + '.T'
 st.write(code)
 
-#st.write(code)
-
 import pandas_datareader.data as web
-
 import datetime
 
 start = datetime.date(2018,1,1)
@@ -26,12 +23,10 @@ df = web.DataReader(code, 'yahoo', start, end)
 
 
 import matplotlib.pyplot as plt
-import numpy as np
 import mplfinance as mpf
 
 #fig, ax = plt.subplots()
 #ax.hist(arr, bins=20)
-
 #st.pyplot(fig)
 
 fig = mpf.figure(figsize=(10, 10),style='yahoo')
