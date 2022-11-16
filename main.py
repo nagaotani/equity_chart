@@ -10,11 +10,15 @@ st.title('株価チャート')
 #st.sidebar.header('銘柄コード入力')
 #code = st.sidebar.text_input('銘柄コード（4桁、半角）') + '.T'
 
+code = '^N225'
 
-code = st.text_input('銘柄コードを入力（半角数字）：例　ソニー　6758、トヨタ　7203　など')
-code = code + '.T'
+code = st.text_input('銘柄コードを入力（半角数字４ケタ）：例　ソニー　6758、トヨタ　7203　\
+            日経平均　^N225　S&P500　^GSPC など', '^N225')
 
-if len(code) < 6:
+if code[0] != '^':
+    code = code + '.T'
+
+if len(code) < 3:
     st.warning('入力お願いします')
     # 条件を満たないときは処理を停止する
     st.stop()
