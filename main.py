@@ -11,7 +11,7 @@ st.title('株価チャート')
 #code = st.sidebar.text_input('銘柄コード（4桁、半角）') + '.T'
 
 
-code = st.text_input('銘柄コードを入力')
+code = st.text_input('銘柄コードを入力（半角数字）：例　ソニー　6758、トヨタ　7203　など')
 code = code + '.T'
 
 if len(code) < 6:
